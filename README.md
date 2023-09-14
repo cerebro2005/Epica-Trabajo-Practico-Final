@@ -12,10 +12,10 @@
 
 ## Rutas
 
-Inicio: `http://localhost:4000/posts` -> trae todos los posts.
-Crea: `http://localhost:4000/create` -> crea un nuevo post.
-Modifica: `http://localhost:4000/update` -> modifica un post.
-Borra: `http://localhost:4000/delete/:id` -> elimina el post selecionado.
+a). Inicio: `http://localhost:4000/posts` -> trae todos los posts.
+b). Crea: `http://localhost:4000/create` -> crea un nuevo post.
+c). Modifica: `http://localhost:4000/update` -> modifica un post.
+d). Borra: `http://localhost:4000/delete/:id` -> elimina el post selecionado.
 
 
 ## Contribución
