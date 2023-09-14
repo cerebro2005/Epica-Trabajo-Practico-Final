@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Epica TP Final</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-dark py-3">
+    <div class="container text-center">
+      <!-- Contenido de la página -->
+      <div class="row d-flex align-items-center">
+        <h1 class="text-white">Mis Posts:</h1>
+        <% allPosts.forEach((post) => { %>
+        <div
+          class="card mb-3 bg-dark text-white border border-secondary-subtle">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <img
+                src="<%= post.imageUrl %>"
+                class="img-fluid rounded-start p-3"
+                alt="<%= post.title%>"/>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h4 class="card-title"><%= post.title %></h5>
+                <p class="card-text text-start"><%= post.content %></p>
+                <p class="card-text text-end">
+                  <small
+                    style="color: white !important"
+                    class="text-body-secondary">Creado el: <%= post.createdAt.toLocaleDateString('es-AR')%></small>
+                </p>
+                <p class="text-end">
+                  <a href="/posts/update/<%= post.id %>" class="btn btn-warning"
+                    ><i class="fa-solid fa-pen-to-square h6"> Actualizar</i></a>
+                  <a href="/posts/delete/<%= post.id %>" class="btn btn-danger">
+                    <i class="fa-solid fa-trash-can-arrow-up h6"> Eliminar</i></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+        <p>
+          <a href="/posts/create" class="btn btn-outline-success h6">
+            <i class="fa-solid fa-cart-plus"></i> Crea un Nuevo Post</a>
+        </p>
+      </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
